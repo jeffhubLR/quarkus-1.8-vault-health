@@ -29,6 +29,9 @@ docker-compose down
 curl localhost:8080/health
 ```
 
-## Testing with other versions of Quarkus
+### Start service from runner.jar
 
-Maven profiles exist for 1.4.2.Final and 1.3.4.Final. They can be used by appending `-Pquarkus-1.4.2.Final` or `-Pquarkus-1.3.4.Final` on to any `mvn` command.
+```
+java -jar target/code-with-quarkus-1.0.0-SNAPSHOT-runner.jar
+```
+Attempt same permutations of hitting health endpoint via `curl http://localhost:8080/health` both with and without Vault running to see that this problem happens even when not in dev-mode.
